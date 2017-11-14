@@ -1,4 +1,4 @@
-# OOP Design Patterns - Inheritance + FP = ???
+# OOP Design Patterns without Inheritence
 
 Over the last decade, the software industry has slowly been moving away from classical-inheritance in favor of more compositional patterns (mixins in Ruby, traits in Scala, etc.) and its begs the question: what happens to the OOP design patterns we've all come to know and love (or hate 😬) in a post-inheritance world? Additionally, what happens to these patterns when we have the full power of functional programming (first-class functions, partial application, monads, etc.) at our disposal?
 
