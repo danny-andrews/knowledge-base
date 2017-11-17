@@ -1,12 +1,12 @@
 # Testing
 
 ## Terminology
-**Factory** - A function which simplifies the construction of some test dependency (arguments, objects, etc.).
-**Fixture** - Any form of static test data.
-**Test-Driven Development (TDD)** - A programming discipline which emphasises writing tests as a part of code design, as easy of testing is a good indicator of code quality.
-**Behavior-Driven Development (BDD)** - A approach to writing tests which focuses on specification and user-facing behavior.
-**Unit/System Under Test (SUT)/Test Subject** — The simplest piece of self-contained functionality. It could be as simple as a method, or as complex as a class, but should be isolated sufficiently from collaborators.
-**Test Case** - One atomic test (usually implemented as a function) which runs some code and makes assertions about it.
+**Factory** - A function which simplifies the construction of some test dependency (arguments, objects, etc.).  
+**Fixture** - Any form of static test data.  
+**Test-Driven Development (TDD)** - A programming discipline which emphasises writing tests as a part of code design, as easy of testing is a good indicator of code quality.  
+**Behavior-Driven Development (BDD)** - A approach to writing tests which focuses on specification and user-facing behavior.  
+**Unit/System Under Test (SUT)/Test Subject** — The simplest piece of self-contained functionality. It could be as simple as a method, or as complex as a class, but should be isolated sufficiently from collaborators.  
+**Test Case** - One atomic test (usually implemented as a function) which runs some code and makes assertions about it.  
 **Test Double[\*](http://xunitpatterns.com/Test%20Double.html)** - A generic term for any kind of pretend object used in place of a real object for testing purposes. Specific examples given below:
 
 * **Fake** — A test double that actually has a working implementation, but usually takes some shortcut which makes it not suitable for production (an [in-memory database](https://martinfowler.com/bliki/InMemoryTestDatabase.html) is a good example, as is [redux-mock-store](https://github.com/arnaudbenard/redux-mock-store)).
@@ -27,10 +27,11 @@ Use factories to make SUT construction easy.
 
 <details>
   <summary>Code Example:</summary>
+  </br>
 
-Bad:
+**Bad**
 
-```
+```js
 import subject from '../get-pr-status-payload';
 
 it("sets state to 'success' when no failures", () => {
@@ -61,7 +62,7 @@ it('sets context to label', () => {
 });
 ```
 
-Good:
+**Good**
 
 ```js
 import getPrStatusPayload from '../get-pr-status-payload';
@@ -107,8 +108,9 @@ Factories should only provide minimal amount of data required to staisfy the SUT
 
 <details>
   <summary>Code Example:</summary>
+  </br>
 
-Bad:
+**Bad**
 
 ```js
 import Person from '../Person';
@@ -126,7 +128,7 @@ it('defaults favoriteNumbers to empty list', () => {
 });
 ```
 
-Good:
+**Good**
 
 ```js
 import Person from '../Person';
@@ -155,11 +157,12 @@ Test external-facing behavior, not implementation. Don’t test private APIs.
 
 <details>
   <summary>Code Example:</summary>
+  </br>
 
-Bad:
+**Bad**
 
 ```js
-test('tick increases count to 1 after calling tick', function() {
+it('tick increases count to 1 after calling tick', function() {
   const subject = Counter();
 
   subject.tick();
@@ -171,7 +174,7 @@ test('tick increases count to 1 after calling tick', function() {
 });
 ```
 
-Good:
+**Good**
 
 ```js
 it('increases count by 1 after calling tick', function() {
@@ -196,11 +199,12 @@ Verifying one behavior != making one assertion, although this is usually the cas
 
 <details>
   <summary>Code Example:</summary>
+  </br>
 
-Bad
+**Bad**
 
 ```js
-test('tick increases count to 1 after calling tick', function() {
+it('tick increases count to 1 after calling tick', function() {
   const subject = Counter();
 
   subject.tick();
@@ -211,7 +215,7 @@ test('tick increases count to 1 after calling tick', function() {
 });
 ```
 
-Good
+**Good**
 
 ```js
 it('defaults count to 0', function() {
@@ -239,7 +243,7 @@ Fixtures are inflexible and necessitate a lot of redundancy. If the shape of you
 #### Prefer BDD syntax
 Many [testing frameworks](https://mochajs.org/#interfaces) offer an xUnit-style syntax (`suite`/`test`) and a BDD-style syntax (`describe`/`it`). The latter helps to nudge the developer in the direction of testing in terms of specifications and external behaviors rather than implementation details and read a little more naturally.
 
-Good
+**Good**
 
 ```js
 describe('thing', () => {
@@ -247,7 +251,7 @@ describe('thing', () => {
 });
 ```
 
-Less good
+**Less good**
 
 ```js
 suite('thing', () => {
@@ -272,8 +276,9 @@ suite('thing', () => {
 
 <details>
   <summary>Code Example:</summary>
+  </br>
 
-Bad
+**Bad**
 
 ```js
 describe('requestMaker', () => {
@@ -291,7 +296,7 @@ describe('requestMaker', () => {
 });
 ```
 
-Good
+**Good**
 
 ```js
 // request-maker-test.js
@@ -318,8 +323,9 @@ These are implied, and removing them keeps descriptions short.
 
 <details>
   <summary>Code Example:</summary>
+  </br>
 
-Bad:
+**Bad**
 
 ```js
 it('should call handler with event object', () => {
@@ -327,7 +333,7 @@ it('should call handler with event object', () => {
 });
 ```
 
-Good
+**Good**
 
 ```js
 it('calls handler with event object', () => {
@@ -358,7 +364,7 @@ Mystery Guest - "The test reader is not able to see the cause and effect between
   <summary>Example (Using React + Enzyme):</summary>
 
 ```jsx
-test('renders stat and label of currently selected datum', () => {
+it('renders stat and label of currently selected datum', () => {
   // Setup/Arrange
   const data = [
     { x: 'Cats', y: 2 },
