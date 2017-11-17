@@ -5,8 +5,8 @@ Over the last decade, the software industry has slowly been moving away from cla
 These are the questions this article attempts to answer. So let's take another look at how the classical OOP design patterns patterns manifest themselves (if at all) in a functional programming language with support for objects. Although several superior languages fit this bill (OCaml, Lisp, etc.) my code examples are going to be in JavaScript, because of its approachable syntax and large user-base.
 
 > In my examples, I'll be using the object creation technique simliar to the one outlined [here](https://medium.com/javascript-scene/javascript-factory-functions-with-es6-4d224591a8b1). Reason: no need for `new` or `this` and no confusing `prototype` behavior. Just functions which return objects.
-
-> For an explanation of patterns, and their classical OOP solutions, head [here](https://github.com/kamranahmedse/design-patterns-for-humans). Or to the [source](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8).
+>
+> For an explanation of patterns, and their classical OOP solutions, head [here](https://github.com/kamranahmedse/design-patterns-for-humans). Or check out the [source](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8).
 
 ## Conditions
 \- Class-based inheritance  
@@ -17,7 +17,7 @@ These are the questions this article attempts to answer. So let's take another l
 ## Terms
 * Lambda - A function used as data (usually synonymous with anonymous function).
 * Client - The consumer of the pattern artifact.
-* Object Composition - "The act of combining component pieces to form a new object." [\*](https://medium.com/javascript-scene/the-open-minded-explorer-s-guide-to-object-composition-88fe68961bed).
+* Object Composition - "The act of combining component pieces to form a new object." [\*](https://medium.com/javascript-scene/the-open-minded-explorer-s-guide-to-object-composition-88fe68961bed)
 
 ### 🚫 ~~Builder~~
 
@@ -1015,11 +1015,11 @@ Of the 21 patterns we looked at:
 🤔 3 (Momento, Prototype, State) remain virtually unchanged.
 
 > Note on compositional patterns:
-
+>
 > * Proxy and Decorator - Both have the same interface as their wrapped types, but the proxy creates an instance under the hood, whereas the decorator takes an instance in the constructor.
 > * Adapter and Facade - Both have a different interface than what they wrap, but the adapter derives from an existing interface, whereas the facade creates a new interface.
 > * Bridge and Adapter - Both point at an existing type. The bridge will allow you to pair the implementation at runtime, whereas the adapter usually won't. With the bridge, you're not adapting to some legacy or third-party code, you're the designer of all the code but you need to be able to swap out different implementations.
-
+>
 > https://stackoverflow.com/questions/350404/how-do-the-proxy-decorator-adapter-and-bridge-patterns-differ
 
 It seems the terms "Builder," "Command," "Singleton," and "Iterator" can be retired and the terms "Flyweight," "Visitor," and "State" replaced with "Memoization," "Map," and "Finite State Machine."
