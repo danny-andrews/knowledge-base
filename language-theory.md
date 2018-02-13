@@ -1,10 +1,26 @@
-# SOLID Principles
+# Language Divisions
+Paradigm:   Object Oriented vs. Functional
+Evaluation: Strict vs. Non-strict vs. Lazy
+Typing:     Static vs. Dynamic, Strong vs. Weak, Manifest vs. Inferred, Nominal vs. Structural, Duck typing/structural typing
+Typing2:    Weak vs. Strong
 
-* Single Responsibility - Every class should only have one reason to exist (and therefore one reason to change).
-* Open-Closed - Every class should be open for extension but closed for modification (If you need new functionality, create a new subclass, don't modify the base class).
-* Liskov Substitution - Every subclass ought to be able to be used anywhere the superclass is used (no exceptional child classes).
-* Interface Segregation - Interfaces ought to include is little functionality as possible (a class shouldn't have to implement a bunch of unrelated methods simply because they need to include a few things that are pertinent to them).
-* Dependency Inversion - High-level modules ought not depend on low-level modules; both ought to depend on abstractions.
+Subtyping Polymorphism
+Parametric Polymorphism
+Ad-Hoc Polymorphism
+Row Polymorphism
+Higher-Kinded Polymorphism
+Multiple Inheritence
+Subtyping Inheritence
+Implementation Inheritence
+Higher-kinded Types
+Higher-rank Types
+Existential Types
+Type Constructors
+Type Operators
+
+## Other
+Protocols
+Mixins
 
 # FP and OOP
 Cross-pollination between FP and OOP: https://www.youtube.com/watch?v=iSmkqocn0oQ
@@ -26,14 +42,14 @@ System.out.println(x + y); // 6.5
 ```
 
 In reality, not so much a binary as a continum.
-Strong typed (fewer implicit type casts) <---------> Weak typed (more implicit type cases)
+Strongly typed (fewer implicit type casts) <---------> Weakly typed (more implicit type cases)
 
-If being pedantic, Java is not strongly typed, but Elm and OCaml are.
+If being pedantic, Java is not strongly typed, but Elm and OCaml are. JavaScript is VERY weakly typed.
 
 * Static vs dynamic
 * Manifest vs inferred
 * Nominal vs structural
-* Duck typing vs structural typing
+* Duck typing/structural typing
 
 Duck typing happens dynamically (via runtime type checks)
 Structural typing happens statically (via type inference)
