@@ -1,5 +1,42 @@
 # React
 
+## Component Design
+Follow the Low of Demeter: keep component props flat. Don't make your components reach deep into nested objects to get the data it needs to render. This couples your view code with your underlying data structure. Components should have clear contracts, requiring only the minimal amount of information it needs to do its job.
+
+<details>
+  <summary>Code Example:</summary>
+  </br>
+
+**Bad**
+This component has way to much knowledge about how we store user objects!
+
+```js
+// UserBadge.jsx
+import React from 'react';
+
+export default ({ user }) => (
+  <div>
+    <img src={user.avatar.imagePathLarge} alt="User image" />
+    <span>Hello {user.firstName}!</span>
+  </div>
+);
+```
+
+**Good**
+
+```js
+// UserBadge.jsx
+import React from 'react';
+
+export default ({ avatarImagePath, displayName }) => (
+  <div>
+    <img src={avatarImagePath} alt="User image" />
+    <span>Hello {displayName}!</span>
+  </div>
+);
+```
+</details>
+
 ## Terms
 HOC - Higher-order component
 Component decorator
